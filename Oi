@@ -1,0 +1,17 @@
+-- Get all players in the game
+local players = game:GetService("Players"):GetPlayers()
+
+-- Function to kill a player
+local function killPlayer(player)
+    -- Check if player's character exists
+    local character = player.Character
+    if character then
+        -- Destroy the character to "kill" them
+        character:Destroy()
+    end
+end
+
+-- Loop through each player and kill them
+for _, player in ipairs(players) do
+    killPlayer(player)
+end
